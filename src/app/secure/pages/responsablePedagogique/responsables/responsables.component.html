@@ -1,0 +1,46 @@
+<div class="container mt-2">
+  <!--Nav-->
+  <!--<div th:replace="nav :: nav"></div>-->
+  <div class="card mt-1">
+    <div class="card-header">
+      <h3>Liste des cours planifier</h3>
+      <div class="my- float-end">
+        <a routerLink="form"
+          class="btn btn-outline-info ">Nouveau</a>
+
+      </div>
+    </div>
+
+    <div class="card-body">
+
+      <table class="table table-bordered" *ngIf="response?.results?.length">
+        <thead>
+            <tr>
+              <th>Heure global</th>
+              <th>Etat cours</th>
+              <th>Semestre</th>
+              <th>professeur</th>
+              <th>Nombre heure planifier</th>
+            </tr>
+        </thead>
+        <tbody>
+
+          @for (item of response?.results; track $index) {
+            <tr>
+              <td>{{item.nbreHeureGlobal}}</td>
+              <td>{{item.etatCours}}</td>
+              <td>{{item.semestre}}</td>
+              <td>{{item.professeur}}</td>
+              <td>{{item.nombreHeurePlanifier}}</td>
+              <td>
+                <a class="btn btn-outline-success">Nouveau commande</a>
+              </td>
+           </tr>
+          }
+        </tbody>
+      </table>
+
+      <app-pagination [data]="dataPagination" (onGetNumberPage)="paginate($event)" ></app-pagination>
+  <!-- Content here -->
+
+</div>
