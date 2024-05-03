@@ -1,7 +1,8 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { LayoutComponent } from '../layout/layout.component';
-import { ResponsablesComponent } from '../pages/responsablePedagogique/responsables/responsables.component';
+import { CoursComponent } from '../pages/responsablePedagogique/cours/cours.component';
+import { SessionCoursComponent } from '../pages/responsablePedagogique/session.cours/session.cours.component';
 const routes: Routes = [
   {
     path:"",
@@ -11,14 +12,18 @@ const routes: Routes = [
         path:"rp",
           children: [
                 {
-                  path:"",
-                  component:ResponsablesComponent,
+                  path:"cours",
+                  component:CoursComponent,
+                },
+                {
+                  path:"session",
+                  component:SessionCoursComponent,
                 }
           ]
       },
       {
         path:"rp",
-        component:ResponsablesComponent,
+        component:CoursComponent,
       }
 
     ]

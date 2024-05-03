@@ -3,8 +3,9 @@ import { CommonModule } from '@angular/common';
 
 import { SecureRoutingModule } from './secure-routing.module';
 import { HeaderComponent } from '../components/header/header.component';
-import { ResponsableServiceImpl } from '../../core/services/Impl/responsable.service.impl';
 import { LayoutComponent } from '../layout/layout.component';
+import { CoursServiceImpl } from '../../core/services/Impl/cours.service.impl';
+import { SessionCoursComponent } from '../pages/responsablePedagogique/session.cours/session.cours.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,7 @@ import { LayoutComponent } from '../layout/layout.component';
     SecureRoutingModule
   ],
   providers:[
-    ResponsableServiceImpl
+    CoursServiceImpl,SessionCoursComponent
   ],
   exports:[
     HeaderComponent

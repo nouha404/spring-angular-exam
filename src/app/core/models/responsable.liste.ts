@@ -1,4 +1,6 @@
 import { EtatCours } from "./enums/etat.cours";
+import { EtatSession } from "./enums/etat.session";
+import { TypeSession } from "./enums/type.session";
 
 export interface ResponsableListe {
 }
@@ -15,3 +17,18 @@ export interface CoursListe {
   heuresRestantes: number,
   professeur: string
 }
+
+export interface SessionCoursList {
+  id: number,
+  date: string,
+  heureDebut: string,
+  heureFin: string,
+  typeSession: TypeSession,
+  etatSession: EtatSession,
+  cours: string,
+  salle: number,
+  nombreHeurePlanifier: number,
+  professeurId: number
+
+}
+
