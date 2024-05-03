@@ -16,25 +16,27 @@
       <table class="table table-bordered" *ngIf="response?.results?.length">
         <thead>
             <tr>
-              <th>Heure global</th>
-              <th>Etat cours</th>
               <th>Semestre</th>
               <th>professeur</th>
+              <th>Heure global</th>
               <th>Nombre heure planifier</th>
+              <th>Nombre heure restant</th>
+              <th>Etat cours</th>
+
+
             </tr>
         </thead>
         <tbody>
 
           @for (item of response?.results; track $index) {
             <tr>
-              <td>{{item.nbreHeureGlobal}}</td>
-              <td>{{item.etatCours}}</td>
               <td>{{item.semestre}}</td>
               <td>{{item.professeur}}</td>
+              <td>{{item.nbreHeureGlobal}}</td>
               <td>{{item.nombreHeurePlanifier}}</td>
-              <td>
-                <a class="btn btn-outline-success">Nouveau commande</a>
-              </td>
+              <td>{{item.heuresRestantes}}</td>
+              <td>{{item.etatCours}}</td>
+
            </tr>
           }
         </tbody>
