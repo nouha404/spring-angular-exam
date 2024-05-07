@@ -37,7 +37,6 @@ export class SessionCoursComponent implements OnInit {
     this.sessionCoursService.findAll(page).subscribe(
       data=>{
         this.response=data;
-
         this.dataPagination.pages=data.pages!
         this.dataPagination.currentPage=data.currentPage!
 

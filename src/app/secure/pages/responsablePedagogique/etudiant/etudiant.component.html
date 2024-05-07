@@ -1,0 +1,36 @@
+<div class="container mt-2">
+
+  <div class="card mt-1">
+    <div class="card-header">
+      <h3>Etudiants dans la session</h3>
+
+    </div>
+
+    <div class="card-body">
+
+      <table class="table table-bordered" *ngIf="response?.results?.length">
+        <thead>
+            <tr>
+              <th>Etudiant</th>
+              <th>Matricule</th>
+              <th>Classe</th>
+            </tr>
+        </thead>
+        <tbody>
+
+
+          @for (item of response?.results; track $index) {
+            <tr>
+              <td>{{item.nomComplet}}</td>
+              <td>{{item.matricule}}</td>
+              <td>{{item.classe}}</td>
+
+           </tr>
+          }
+        </tbody>
+      </table>
+
+       <!--<app-pagination [data]="dataPagination" (onGetNumberPage)="paginate($event)" ></app-pagination>
+       -->
+
+</div>

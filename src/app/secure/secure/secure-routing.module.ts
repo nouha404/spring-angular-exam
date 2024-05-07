@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { LayoutComponent } from '../layout/layout.component';
 import { CoursComponent } from '../pages/responsablePedagogique/cours/cours.component';
 import { SessionCoursComponent } from '../pages/responsablePedagogique/session.cours/session.cours.component';
+import { EtudiantComponent } from '../pages/responsablePedagogique/etudiant/etudiant.component';
 const routes: Routes = [
   {
     path:"",
@@ -18,12 +19,17 @@ const routes: Routes = [
                 {
                   path:"session",
                   component:SessionCoursComponent,
+
+                },
+                {
+                    path:"session/:id",
+                    component:EtudiantComponent
                 }
+
+
+
+
           ]
-      },
-      {
-        path:"rp",
-        component:CoursComponent,
       }
 
     ]
