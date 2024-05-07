@@ -32,3 +32,10 @@ export interface SessionCoursList {
 
 }
 
+export interface EtudiantList {
+  id: number,
+  nomComplet: string,
+  matricule: string,
+  classe: string
+}
+

@@ -15,6 +15,7 @@ export class PaginationComponent {
 
   // appel la methode paginate du parent
   paginate(page:number){
+
     this.onGetNumberPage.emit(page);
   }
 }

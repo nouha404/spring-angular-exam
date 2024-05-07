@@ -18,6 +18,7 @@ export class CoursServiceImpl implements CoursService {
   private API_URL = `${environment.API_URL}/rp/cours`
 
   findAll(page:number,keyword:string="EN_COURS"): Observable<RestResponse<CoursListe[]>> {
+
     return  this.http.get<RestResponse<CoursListe[]>>(`${this.API_URL}?page=${page}&etat=${keyword}`);
   }
 }

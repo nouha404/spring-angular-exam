@@ -1,15 +1,16 @@
-<!--<nav aria-label="Page navigation example ">
+<nav aria-label="Page navigation example ">
   <ul class="pagination float-end">
       <li class="page-item "><a class="page-link">Previous</a></li>
-
+      @for( item of data.pages; track $index){
         <li class="page-item " [ngClass]="{'active': $index==data.currentPage}" >
             <a (click)="paginate($index)" class="page-link"  >{{ $index+1}}</a>
         </li>
        }
       <li class="page-item"><a class="page-link" >Next</a></li>
   </ul>
-</nav>-->
+</nav>
 
+<!--
 <nav aria-label="Page navigation example">
   <ul class="pagination">
     @for( item of data.pages; track $index){
@@ -32,4 +33,4 @@
 
   </ul>
 </nav>
-
+-->

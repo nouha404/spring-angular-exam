@@ -37,8 +37,16 @@
               <td>{{item.nombreHeurePlanifier}}</td>
               <td>{{item.salle}}</td>
 
+
+              <td>
+
+                <a class="btn btn-outline-success" [routerLink]="'/session/professeur/' + item.id"  >Voir etudiant</a>
+            </td>
+
            </tr>
           }
+
+
         </tbody>
       </table>
 
