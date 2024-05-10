@@ -30,6 +30,10 @@
         </tbody>
       </table>
 
+      <div *ngIf="!(response?.results?.length)">
+        <p>Aucun étudiant dans la session.</p>
+      </div>
+
        <!--<app-pagination [data]="dataPagination" (onGetNumberPage)="paginate($event)" ></app-pagination>
        -->
 

@@ -34,6 +34,7 @@ export class EtudiantComponent implements OnInit  {
     this.refresh();
 
 
+
   }
   refresh(page:number=0,libelleClasse:string=""){
     this.etudiantService.findAll(page,this.sessionId,libelleClasse).subscribe(
@@ -44,7 +45,6 @@ export class EtudiantComponent implements OnInit  {
         this.dataPagination.currentPage=data.currentPage!
 
       }
-
 
     );
   }

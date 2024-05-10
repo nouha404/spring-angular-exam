@@ -24,10 +24,7 @@ const routes: Routes = [
                 {
                     path:"session/:id",
                     component:EtudiantComponent
-                }
-
-
-
+                },
 
           ]
       }

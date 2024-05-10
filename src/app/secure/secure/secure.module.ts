@@ -19,7 +19,7 @@ import { EtudiantServiceImpl } from '../../core/services/Impl/etudiant.service.i
     SecureRoutingModule
   ],
   providers:[
-    CoursServiceImpl,SessionCoursComponent,EtudiantComponent
+    CoursServiceImpl,SessionCoursComponent, EtudiantServiceImpl
   ],
   exports:[
     HeaderComponent
