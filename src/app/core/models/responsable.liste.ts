@@ -1,5 +1,5 @@
 import { EtatCours } from "./enums/etat.cours";
-import { EtatSession } from "./enums/etat.session";
+import { ENiveau, EtatSession, Specialiter } from "./enums/etat.session";
 import { TypeSession } from "./enums/type.session";
 
 export interface ResponsableListe {
@@ -39,3 +39,20 @@ export interface EtudiantList {
   classe: string
 }
 
+export interface ClasseCreate {
+  id?: number,
+  libelle: string,
+}
+
+
+export interface ProfCreate {
+  id?: number,
+  nom:string,
+  prenom:string,
+  specialite: Specialiter|string;
+  grade: ENiveau|string,
+
+}
+export interface Grade {
+  
+}

@@ -1,0 +1,97 @@
+<div class="container">
+  <div class="card mt-2">
+      <div class="card-header">
+          <h5>Enregistrement d'un professeur</h5>
+      </div>
+      <div class="card-body">
+          <form class="col-md-8 offset-2" #formProf="ngForm"
+          (ngSubmit)="formProf.form.valid && onSaveFormulaire()"
+          >
+
+
+              <div class="mb-3 form-group">
+                  <label for="nom" class="form-label">Nom</label>
+                  <input type="text"
+                        name="nom"
+                         [(ngModel)]="profCreate.nom"
+                         required
+                         minlength="5"
+                         #nom="ngModel"
+
+                         class="form-control" id="nomComplet" aria-describedby="emailHelp">
+
+                  @if (nom.errors && (nom.dirty || nom.touched)) {
+                    @if(nom.errors["required"]){
+                      <small id="nomCompletHelp" class="form-text text-danger">
+                        Le nom est obligatoire
+                      </small>
+
+                    }
+                    @if(nom.errors["minlength"]){
+                      <small id="nomCompletHelp" class="form-text text-danger">
+                        Le nom doit avoir aumoins 5 caracteres
+                      </small>
+
+                    }
+
+                  }
+
+
+              </div>
+
+              <div class="mb-3 form-group">
+                <label for="prenom" class="form-label">Prenom</label>
+                <input type="text"
+                      name="prenom"
+                       [(ngModel)]="profCreate.prenom"
+                       required
+                       minlength="5"
+                       #prenom="ngModel"
+
+                       class="form-control" id="prenom" aria-describedby="emailHelp">
+
+                @if (prenom.errors && (prenom.dirty || prenom.touched)) {
+                  @if(prenom.errors["required"]){
+                    <small id="nomCompletHelp" class="form-text text-danger">
+                      Le nom est obligatoire
+                    </small>
+
+                  }
+                  @if(prenom.errors["minlength"]){
+                    <small id="nomCompletHelp" class="form-text text-danger">
+                      Le nom doit avoir aumoins 5 caracteres
+                    </small>
+
+                  }
+
+                }
+
+
+            </div>
+              <div class="mb-3">
+                <label for="grade">Grade</label>
+                <select name="grade" [(ngModel)]="profCreate.grade" class="form-control" required>
+                  <option *ngFor="let grade of grades" [value]="grade">{{ grade }}</option>
+                </select>
+
+              </div>
+
+              <div class="mb-3">
+                <label for="specialite">Spcialiter</label>
+                <select name="specialite" [(ngModel)]="profCreate.specialite" class="form-control" required>
+                  <option *ngFor="let specialite of specialites" [value]="specialite">{{ specialite }}</option>
+                </select>
+              </div>
+
+
+              <div>
+                  <button [disabled]="formProf.invalid" type="submit" class="float-end btn btn-primary">Enregister</button>
+              </div>
+
+          </form>
+
+
+
+      </div>
+  </div>
+</div>

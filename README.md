@@ -9,3 +9,11 @@
 
 ## Annuler session cours
 <img src="/vid/img4.png"/>
+
+## Add classe
+<img src="/vid/img5.png"/>
+
+## Add professeur
+<img src="/vid/img7.png"/>
+
+

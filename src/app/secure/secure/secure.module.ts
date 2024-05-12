@@ -8,6 +8,8 @@ import { CoursServiceImpl } from '../../core/services/Impl/cours.service.impl';
 import { SessionCoursComponent } from '../pages/responsablePedagogique/session.cours/session.cours.component';
 import { EtudiantComponent } from '../pages/responsablePedagogique/etudiant/etudiant.component';
 import { EtudiantServiceImpl } from '../../core/services/Impl/etudiant.service.impl';
+import { ProfesseurServiceImpl } from '../../core/services/Impl/professeur.service.impl';
+import { GradeServiceImpl } from '../../core/services/Impl/grade.service.impl';
 
 @NgModule({
   declarations: [
@@ -19,7 +21,7 @@ import { EtudiantServiceImpl } from '../../core/services/Impl/etudiant.service.i
     SecureRoutingModule
   ],
   providers:[
-    CoursServiceImpl,SessionCoursComponent, EtudiantServiceImpl
+    CoursServiceImpl,SessionCoursComponent, EtudiantServiceImpl,GradeServiceImpl
   ],
   exports:[
     HeaderComponent
