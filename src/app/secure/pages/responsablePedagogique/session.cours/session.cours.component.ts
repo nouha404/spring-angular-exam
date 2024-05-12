@@ -44,5 +44,20 @@ export class SessionCoursComponent implements OnInit {
 
     );
   }
+  deleteEtudent(sessionId: number) {
+    this.sessionCoursService.cancelSession(sessionId).subscribe(
+      (resp) => {
+        console.log(resp);
+        //actualiser
+        this.refresh();
+      },
+      error => {
+        console.error('Erreur lors de l\'annulation de la session de cours', error);
+      }
+    );
+  }
+
+
+
 
 }

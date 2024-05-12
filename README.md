@@ -4,5 +4,8 @@
 ## Liste des sessions de cours
 <img src="/vid/image-copy.png"/>
 
-## without refresh page a have
-<img src="/vid/w-r.png"/>
+## Les etudiants qui suivent un cours
+
+
+## Annuler session cours
+<img src="/vid/img4.png"/>

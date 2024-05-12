@@ -40,11 +40,18 @@
 
               <td>
                 <a class="btn btn-outline-success" [routerLink]="'/responsable/rp/session/' + item.id">Voir étudiant</a>
+              </td>
+
+              <td>
+                <button class="btn btn-outline-danger" (click)="deleteEtudent(item.id)">Annuler la session de cours</button>
+              </td>
 
 
-                <!--<a class="btn btn-outline-success" [routerLink]="'rp/session/' + item.id">Voir etudiant</a>--->
+              <!--<td>
+                <button class="btn btn-outline-danger" (click)="cancelSession(item.id)">Annuler la session de cours</button>
+              </td>-->
 
-            </td>
+
 
            </tr>
           }

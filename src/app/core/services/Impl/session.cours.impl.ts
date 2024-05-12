@@ -17,8 +17,12 @@ export class SessionCoursServiceImpl implements SessionCoursService{
   }
 
   private API_URL = `${environment.API_URL}/rp/sessions`
+  private SESSION_URL = `${environment.SESSION_URL}/rp/session`
 
   findAll(page:number): Observable<RestResponse<SessionCoursList[]>> {
     return  this.http.get<RestResponse<SessionCoursList[]>>(`${this.API_URL}?page=${page}`);
+  }
+  cancelSession(sessionId: number): Observable<void> {
+    return this.http.delete<void>(`${this.SESSION_URL}/${sessionId}/cancel`);
   }
 }

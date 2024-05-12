@@ -5,6 +5,6 @@ import {Observable} from "rxjs";
 export interface SessionCoursService {
   findAll(page:number): Observable<RestResponse<SessionCoursList[]>>;
   //http://localhost:9998/api/rp/session/2/cancel
-  cancelSessionCours(sessionId:number):Observable<RestResponse<SessionCoursList[]>>;
+  cancelSession(sessionId: number): Observable<void>;
 
 }
