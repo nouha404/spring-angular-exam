@@ -1,0 +1,81 @@
+
+
+
+<!--
+<div class="container">
+  <div class="card mt-2">
+      <div class="card-header">
+          <h5>Enregistrement d'un professeur</h5>
+      </div>
+      <div class="card-body">
+          <form class="col-md-8 offset-2" #formCours="ngForm"
+          (ngSubmit)="formCours.form.valid && onSaveFormulaire()">
+              <div class="mb-3 form-group">
+                  <label for="nbreHeureGlobal" class="form-label">Heure Globale</label>
+                  <input type="text" name="nbreHeureGlobal" [(ngModel)]="coursCreate.nbreHeureGlobal" required class="form-control" id="nbreHeureGlobal">
+              </div>
+              <div class="mb-3 form-group">
+                <label for="semestre" class="form-label">Semestre</label>
+                <select name="semestre" [(ngModel)]="coursCreate.semestreId" class="form-control" required>
+                  <option *ngFor="let semestre of semestres" [value]="semestre.id">{{ semestre.libelle }}</option>
+                </select>
+              </div>
+              <div class="mb-3 form-group">
+                <label for="module" class="form-label">Module</label>
+                <select name="module" [(ngModel)]="coursCreate.moduleId" class="form-control" required>
+                  <option *ngFor="let module of modules" [value]="module.id">{{ module.libelle }}</option>
+                </select>
+              </div>
+              <div class="mb-3 form-group">
+                <label for="professeur" class="form-label">Professeur</label>
+                <select name="professeur" [(ngModel)]="coursCreate.professeurId" class="form-control" required>
+                  <option *ngFor="let professeur of professeurs" [value]="professeur.id">{{ professeur.nomComplet }}</option>
+                </select>
+              </div>
+              <div>
+                  <button [disabled]="formCours.invalid" type="submit" class="float-end btn btn-primary">Enregister</button>
+              </div>
+          </form>
+      </div>
+  </div>
+</div>-->
+
+
+<!-- src/app/components/cours-form/cours.form.component.html -->
+
+<div class="container">
+  <div class="card mt-2">
+    <div class="card-header">
+      <h5>Ajouter un Cours</h5>
+  </div>
+    <div class="card-body">
+      <form (ngSubmit)="onSaveFormulaire()" #coursForm="ngForm">
+        <div class="form-group">
+          <label for="semestre">Semestre:</label>
+          <select [(ngModel)]="coursCreate.semestre.id" name="semestre" required>
+            <option *ngFor="let semestre of semestres" [value]="semestre.id">{{ semestre.libelle }}</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="module">Module:</label>
+          <select [(ngModel)]="coursCreate.module.id" name="module" required>
+            <option *ngFor="let module of modules" [value]="module.id">{{ module.libelle }}</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="professeur">Professeur:</label>
+          <select [(ngModel)]="coursCreate.professeur.id" name="professeur" required>
+            <option *ngFor="let professeur of professeurs" [value]="professeur.id">{{ professeur.nomComplet }}</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="nbreHeureGlobal">Nombre d'Heures Global:</label>
+          <input type="number" [(ngModel)]="coursCreate.nbreHeureGlobal" name="nbreHeureGlobal" required />
+        </div>
+        <button type="submit" [disabled]="!coursForm.form.valid">Ajouter</button>
+      </form>
+    </div>
+  </div>
+
+
+</div>

@@ -1,0 +1,42 @@
+<div class="container d-flex justify-content-center mt-5">
+  <div class="card w-75">
+    <div class="card-body">
+      <h4 class="card-title">Formulaire</h4>
+      <form [formGroup]="form" method="post" (submit)="onSubmit()">
+        <div class="mb-3">
+          <label for="exmple" class="form-label">
+            Login
+          </label>
+          <input type="email"
+                  class="form-controll"
+                  id="exmple"
+                  aria-describedby="emailHelp"
+                  formControlName="username"
+          />
+
+          <div id="emailHelp" class="form-text">
+            We'll never share your email with anyone
+          </div>
+
+          <div class="mb-3">
+            <label for="password" class="form-label">
+              Password
+            </label>*
+
+            <input type="password"
+                  class="form-controll"
+                  id="password"
+                  aria-describedby="passwordHelp"
+                  formControlName="password"
+            />
+
+            <button type="submit" class="btn btn-primary">Submit</button>
+
+
+
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

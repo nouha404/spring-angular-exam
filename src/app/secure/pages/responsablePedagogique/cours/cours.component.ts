@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
-import { RouterLink, RouterLinkActive, RouterModule } from '@angular/router';
+import { Router, RouterLink, RouterLinkActive, RouterModule } from '@angular/router';
 import { PaginationComponent } from '../../../../core/components/pagination/pagination.component';
 import { PaginationModel } from '../../../../core/models/pagination.model';
 import { CoursListe } from '../../../../core/models/responsable.liste';
@@ -15,14 +15,19 @@ import { CoursServiceImpl } from '../../../../core/services/Impl/cours.service.i
   styleUrl: './cours.component.css'
 })
 export class CoursComponent implements OnInit  {
-  constructor(private coursService:CoursServiceImpl){}
+  constructor(private coursService:CoursServiceImpl, private router:Router){}
 
   response?: RestResponse<CoursListe[]>
   dataPagination:PaginationModel = {
     pages:[],
     currentPage:0
   };
+  //selectedCours?: CoursListe;
 
+
+  redirectToForm() {
+    this.router.navigateByUrl("formCours")
+  }
 
   ngOnInit(): void {
     this.refresh();
@@ -46,4 +51,16 @@ export class CoursComponent implements OnInit  {
 
       );
     }
+
+
+
+   /* navigateToPlanificationPage(coursId: number) {
+      this.router.navigateByUrl(`rp/planification/${coursId}`);
+    }
+
+    openPlanificationForm(cours: CoursListe) {
+      console.log('Ouvrir le formulaire de planification pour le cours : ', cours);
+      this.navigateToPlanificationPage(cours.id);
+    }*/
+
 }

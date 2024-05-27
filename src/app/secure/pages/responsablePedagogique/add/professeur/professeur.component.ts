@@ -5,6 +5,7 @@ import { Router } from '@angular/router';
 import { ProfCreate } from '../../../../../core/models/responsable.liste';
 import { GradeServiceImpl } from '../../../../../core/services/Impl/grade.service.impl';
 import { CommonModule } from '@angular/common';
+import { RpServiceImplService } from '../../../../../core/services/Impl/rp.service.impl.service';
 
 @Component({
   selector: 'app-professeur',
@@ -17,15 +18,15 @@ export class ProfesseurComponent implements OnInit {
 
   constructor(
     private professeurService:ProfesseurServiceImpl,
-    private gradeService:GradeServiceImpl,
+    private rpService:RpServiceImplService,
     private router:Router
   ){}
   ngOnInit(): void {
-    this.gradeService.getGrades().subscribe(data => {
+    this.rpService.getGrades().subscribe(data => {
       this.grades = data.results;
     });
 
-    this.gradeService.specialite().subscribe(data => {
+    this.rpService.specialite().subscribe(data => {
       this.specialites = data.results;
     });
   }

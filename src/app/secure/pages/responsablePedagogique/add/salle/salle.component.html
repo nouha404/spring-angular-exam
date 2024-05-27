@@ -1,0 +1,96 @@
+<div class="container">
+  <div class="card mt-2">
+      <div class="card-header">
+          <h5>Enregistrement d'un professeur</h5>
+      </div>
+      <div class="card-body">
+          <form class="col-md-8 offset-2" #formProf="ngForm"
+          (ngSubmit)="formProf.form.valid && onSaveFormulaire()"
+          >
+
+
+              <div class="mb-3 form-group">
+                  <label for="nom" class="form-label">Libelle</label>
+                  <input type="text"
+                        name="nom"
+                         [(ngModel)]="salleCreate.nom"
+                         required
+                         minlength="4"
+                         #nom="ngModel"
+
+                         class="form-control" id="nom" aria-describedby="emailHelp">
+
+                  @if (nom.errors && (nom.dirty || nom.touched)) {
+                    @if(nom.errors["required"]){
+                      <small id="nomCompletHelp" class="form-text text-danger">
+                        Le libelle de la salle est obligatoire
+                      </small>
+
+                    }
+                    @if(nom.errors["minlength"]){
+                      <small id="nomCompletHelp" class="form-text text-danger">
+                        Le libelle de la salle doit avoir aumoins 4 caracteres
+                      </small>
+
+                    }
+
+                  }
+
+
+              </div>
+
+              <div class="mb-3 form-group">
+                <label for="prenom" class="form-label">Numero salle</label>
+                <input type="text"
+                      name="number"
+                       [(ngModel)]="salleCreate.number"
+                       required
+                       #number="ngModel"
+
+                       class="form-control" id="prenom" aria-describedby="emailHelp">
+
+                @if (number.errors && (number.dirty || number.touched)) {
+                  @if(number.errors["required"]){
+                    <small id="nomCompletHelp" class="form-text text-danger">
+                      Le numero de la salle est obligatoire
+                    </small>
+
+                  }
+
+                }
+              </div>
+              <div class="mb-3 form-group">
+                <label for="nbrPlace" class="form-label">Nombre de Place</label>
+                <input type="text"
+                      name="number"
+                       [(ngModel)]="salleCreate.nbrPlace"
+                       required
+                       #nbrPlace="ngModel"
+
+                       class="form-control" id="nbrPlace" aria-describedby="emailHelp">
+
+                @if (number.errors && (number.dirty || number.touched)) {
+                  @if(number.errors["required"]){
+                    <small id="nomCompletHelp" class="form-text text-danger">
+                      Le nombre est obligatoire
+                    </small>
+
+                  }
+
+                }
+
+              </div>
+
+
+
+              <div>
+                  <button [disabled]="formProf.invalid" type="submit" class="float-end btn btn-primary">Enregister</button>
+              </div>
+
+          </form>
+
+
+
+      </div>
+  </div>
+</div>

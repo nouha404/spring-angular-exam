@@ -16,4 +16,6 @@
 ## Add professeur
 <img src="/vid/img7.png"/>
 
+## Add Salle
+<img src="/vid/img8.png"/>
 

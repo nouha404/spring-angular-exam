@@ -1,12 +1,13 @@
 <div class="container mt-2">
- 
+
   <div class="card mt-1">
     <div class="card-header">
       <h3>Liste des cours planifier</h3>
       <div class="my- float-end">
-        <a routerLink="form"
-          class="btn btn-outline-info ">Nouveau</a>
-
+        <!--<a
+          (click)="redirectToForm()"
+          class="btn btn-outline-info ">Planifier</a>
+      -->
       </div>
     </div>
 
@@ -33,6 +34,10 @@
               <td>{{item.nombreHeurePlanifier}}</td>
               <td>{{item.heuresRestantes}}</td>
               <td>{{item.etatCours}}</td>
+
+            <td>
+              <a class="btn btn-outline-success" [routerLink]="'/responsable/rp/cours/planification/' + item.id">Planifier session</a>
+            </td>
 
            </tr>
           }

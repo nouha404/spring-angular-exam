@@ -53,6 +53,48 @@ export interface ProfCreate {
   grade: ENiveau|string,
 
 }
-export interface Grade {
-  
+
+export interface SalleCreate {
+  id?: number,
+  nom:string,
+  number:string,
+  nbrPlace:number;
+
 }
+export interface SemestreCreate {
+  id?: number,
+  libelle:string
+
+}
+export interface ModuleCreate {
+  id?: number,
+  libelle:string
+
+}
+
+/*export interface CoursCreate {
+  id?: number,
+  nbreHeureGlobal: number,
+  professeurId: number, // Changement du type de string à number
+  moduleId: number, // Changement du type de string à number
+  semestreId: number, // Changement du type de string à number
+
+}*/
+
+export interface CoursCreate {
+  nbreHeureGlobal: number;
+  professeur: { id: number };
+  module: { id: number };
+  semestre: { id: number };
+}
+
+
+
+/*export interface CoursCreate {
+  id?:number,
+  nbreHeureGlobal:number,
+  professeur:string,
+  module:string,
+  semestre:string,
+
+}*/
